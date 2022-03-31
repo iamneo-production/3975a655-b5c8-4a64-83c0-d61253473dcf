@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .app-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .nav-container {
+    background-color: #ffb74b;
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    padding: 20px 0px;
+    padding-left: 50px;
+  }
+  
+  .nav-container h1 {
+    width: max-content;
+    text-shadow: 1px 1px 2px black;
+  }
+  
+  .right {
+    float: right;
+    padding: 15px 0px;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+  }
+  
+  .left {
+    float: left;
+  }
+  .column {
+    margin-top: 20px;
+    float: right;
+    width: 22%;
+    margin-left: 100px;
+    padding: 10px;
+    border-radius: 10;
+    height: 550px; /* Should be removed. Only for demonstration */
+  }
+  
+  .content-container {
+    height: calc(100vh - 100px);
+    width: 100vw;
+    background-color:#dcdcdc;
+    display: flex;
+    align-items: center;
+    /* justify-items: center; */
+  }
+  
+  .left-content {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .issue-box {
+    display: flex;
+    background-color: aqua;
+    padding: 15px;
+    margin: 40px 5px 0px 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    height: 120px;
+    color: #fff;
+  
+  }
+  
+  .issue-content {
+    text-align: center;
+    margin-left: 10px;
+    
+  }
+  
+  .right-content {
+    background-color: #fff;
+    height: 80%;
+    padding: 85px 0px;
+    width: 25%;
+    border-radius: 12px;
+    margin-left: 80px;
+    margin-right: 5px;
+    margin-top: -40px;
+  
+    text-align: center;
+  }
+  
+  .right-content h2 {
+    margin-bottom: 60px;
+  }
+  
+  
+  .link-container a {
+    margin-left: 25px;
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+  }
+  
+  .solved{
+    display: none;
+  }
+  .right-text h4{
+    margin-bottom: 50px;
+  }
+  .link-container {
+    margin-left: 80px;
+  
+  
+  }

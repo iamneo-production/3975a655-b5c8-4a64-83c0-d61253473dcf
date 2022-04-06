@@ -2,7 +2,6 @@ package com.examly.springapp.model;
 
 
 import javax.persistence.*;
-
 import java.util.Set;
 
 
@@ -13,9 +12,12 @@ public class User {
     @Id
     private String username;
     private String name;
+     private String firstname;//for employee name
     private String mobilenumber;
     private String password;
     private boolean active;
+     private String role1;
+    private int developerId;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLE",
             joinColumns = {
@@ -36,6 +38,29 @@ public class User {
 
 
     public User() {
+    }
+     public String getRole1() {
+        return role1;
+    }
+
+    public void setRole1(String role1) {
+        this.role1 = role1;
+    }
+
+    public int getDeveloperId() {
+        return developerId;
+    }
+
+    public void setDeveloperId(int developerId) {
+        this.developerId = developerId;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
 

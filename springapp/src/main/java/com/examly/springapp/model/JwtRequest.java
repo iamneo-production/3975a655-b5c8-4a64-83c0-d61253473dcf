@@ -1,4 +1,5 @@
 package com.examly.springapp.model;
+
 public class JwtRequest {
 
     private String username;

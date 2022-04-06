@@ -11,15 +11,32 @@ import java.util.List;
 public class IssueController {
     @Autowired
     private IssueService service;
-    @GetMapping("/addIssue")
+
+    @GetMapping("/addComplaint")
     @CrossOrigin(origins = "http://localhost:4200")
-    public List<AddIssue> fetchUser() {
+    public List<AddIssue> getIssue() {
         return service.fetchIssue();
     }
 
-    @PostMapping("/addIssue")
+    @PostMapping("/addComplaint")
     @CrossOrigin(origins = "http://localhost:4200")
     public AddIssue saveIssue(@RequestBody AddIssue issue) {
         return service.saveIssue(issue);
     }
+     @GetMapping("/complaint/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public AddIssue issueEditData(@PathVariable("id") int complaintId) {
+        return service.fetchIssuebyId(complaintId);
+    }
+    @DeleteMapping("/complaint/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public AddIssue complaintDelete (@PathVariable("id") int complaintId) {
+        return service.deleteComplaint(complaintId);
+    }
+    @GetMapping("/issue/{username1}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List <AddIssue> getIssueByName(@PathVariable String username1){
+        return service.fetchDataByUser1(username1);
+    }
+
 }

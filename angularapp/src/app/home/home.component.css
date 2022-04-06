@@ -1,0 +1,71 @@
+/* Bordered form */
+form {
+    margin-top: 5px;
+    border: 2px solid #f70606;
+    background-color: #cccccc;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    align-content: space-between;
+    display: inline-block;
+    border: 1px solid rgb(26, 18, 18);
+    box-sizing: content-box;
+    box-shadow: inset 0px 0px 25px 0px rgb(255, 255, 255);
+    
+  }
+  /* Set a style for all buttons */
+  .navbar{
+    background-color: rgb(230,150,0);
+    font-size: large;
+    width:100%;
+    height: 100px;
+    
+  }
+
+  h1{
+    padding-top: 30px;
+    font-size: x-large;
+    color: #ffffff;
+  } 
+  
+  /* Add padding to containers */
+  .container {
+    padding:200px;
+  text-align: center;
+  align-content: space-between;
+  
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 100px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: center;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+  .btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+  }
+  
+  /* On mouse-over */
+  .btn:hover {background: rgb(230,100,0)}
+    .btn{color: #cccccc;}
+ 

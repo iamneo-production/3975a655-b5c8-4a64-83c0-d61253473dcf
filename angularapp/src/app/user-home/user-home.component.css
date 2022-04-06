@@ -60,7 +60,7 @@
   
   .issue-box {
     display: flex;
-    background-color: aqua;
+    background-color:#1e90ff;
     padding: 15px;
     margin: 40px 5px 0px 10px;
     align-items: center;
@@ -105,11 +105,35 @@
   .solved{
     display: none;
   }
-  .right-text h4{
-    margin-bottom: 50px;
-  }
+
   .link-container {
     margin-left: 80px;
   
   
   }
+  
+.right-text{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-text__content{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 60%;
+  margin-bottom: 35px;
+}
+
+.c-yellow{
+  color: yellow;
+}
+
+.c-red{
+  color: red;
+}
+
+.c-green{
+  color: green;
+}

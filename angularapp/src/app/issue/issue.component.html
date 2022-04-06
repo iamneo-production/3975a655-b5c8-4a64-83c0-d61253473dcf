@@ -1,35 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" />
-    <title>Website</title>
-  </head>
 
-  <body>
-    <form #Issueform="ngForm"class="app" (ngSubmit)="submitIssue()">
-      <h1>Add Issue</h1>
-      <div class="row">
-        <label for="issue">Name of Issue</label>
-        <input type="text"  name="issue" id="name" [(ngModel)]="Issue.complaintName" required />
-      </div>
-      <div class="row">
-        <label for="">Description</label>
-      
-        <input type="text" name="desc" id="description" [(ngModel)]="Issue.description" required />
-      </div>
-      <div class="row">
-        <label for="myURL">Image Url</label>
-        <input type="text"  class="url"  name="url" id="imageUrl"   (change)="showImage()" #imageUrl    [(ngModel)]="Issue.imageUrl"required />
-          </div>
-      <div class="preview_container">
-        <h3 id="text">Image Preview</h3>
-        <img [src]="imageToShow" alt="img" class="preview" id="imagePreviewArea" draggable="false"  />
-      </div>
-      <!-- <input type="submit" value="Submit" />  -->
-      <button [disabled]="Issueform.form['invalid']"  type="submit" id="submitButton" class="btn btn-info">Submit</button> 
-    </form>
+<link rel="stylesheet" href="issue.component.css">
+
+<div class="app-container">
+  <nav class="nav-container">
+    <span class="left"><h1>Grievance Cell</h1></span>
+
+    <h4>
+      <a [routerLink]=""><span class="right">Logout</span></a>
+      <a href="url"><span class="right">Add+</span></a>
+      <a href="url"><span class="right">Home</span></a>
+    </h4>
+  </nav>
     
-  </body>
-</html>
+    <div class="form-wrapper">
+
+      <form #Issueform="ngForm"class="app" (ngSubmit)="submitIssue()">
+        <h1>Add Issue</h1>
+        <div class="form__row">
+          <label for="issue">Name of Issue</label>
+          <input type="text"  name="issue" id="name" [(ngModel)]="Issue.complaintName" required />
+        </div>
+        <div class="form__row">
+          <label for="">Description</label>
+        
+          <input type="text" name="desc" id="description" [(ngModel)]="Issue.description" required />
+        </div>
+        <div class="form__row">
+          <label for="myURL">Image Url</label>
+          <input type="text"  class="url"  name="url" id="imageUrl"   (change)="showImage()" #imageUrl    [(ngModel)]="Issue.imageUrl"required />
+            </div>
+        <div class="preview_container">
+          <h3 id="text">Image Preview</h3>
+          <img [src]="imageToShow" alt="img" class="preview" id="imagePreviewArea" draggable="false"  />
+        </div>
+        <!-- <input type="submit" value="Submit" />  -->
+        <button [disabled]="Issueform.form['invalid']"  type="submit" id="submitButton" class="btn btn-info">Submit</button> 
+      </form>
+    </div>
+    </div>
+    
+

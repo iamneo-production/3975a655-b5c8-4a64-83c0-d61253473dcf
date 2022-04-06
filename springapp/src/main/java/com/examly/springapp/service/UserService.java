@@ -1,6 +1,4 @@
 package com.examly.springapp.service;
-
-
 import com.examly.springapp.model.Role;
 import com.examly.springapp.model.User;
 import com.examly.springapp.repo.RoleRepo;

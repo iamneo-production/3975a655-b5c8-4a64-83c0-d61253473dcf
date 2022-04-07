@@ -1,99 +1,62 @@
-<div class="app-container">
-    <nav class="nav-container">
-      <span class="left"><h1>Grievance Cell</h1></span>
-  
-      <h4>
-        <a [routerLink]=""><span class="right">Logout</span></a>
-        <a href="url"><span class="right">Add+</span></a>
-        <a href="url"><span class="right">Home</span></a>
-      </h4>
-    </nav>
-  
-    <div class="content-container">
-      <section class="left-content">
-        <div class="link-container">
-          <a href="#">Active</a>
-          <a href="#">Solved</a>
-        </div>
-        <div class="issues">
-          <!-- Add clas name solved to all the solved issues -->
-          <div class="issue-box ">
-            <h3>#202103114</h3>
-            <div class="issue-content">
-              <h4>Issue</h4>
-              <p>Damage Product</p>
-            </div>
-            <div class="issue-content">
-              <h4>Created On</h4>
-              <p>18/03/2021</p>
-            </div>
-            <div class="issue-content">
-              <h4>Developer</h4>
-              <p>Mr. XYZ</p>
-            </div>
-            <div class="issue-content">
-              <h4>Status</h4>
-              <p>Active</p>
-            </div>
+<div class="app-container" id="userHome">
+  <nav class="nav-container">
+    <span class="left"><h1>Grievance Cell</h1></span>
+
+    <h4>
+      <a [routerLink]="['/login']"><span class="right"(click)="logout()">Logout</span></a>
+      <a [routerLink]="['/issue']"><span class="right">Add+</span></a>
+      <a [routerLink]="['/user-home']"><span class="right">Home</span></a>
+    </h4>
+  </nav>
+
+  <div class="content-container">
+    <section class="left-content">
+      <div class="link-container">
+        <a [routerLink]="['/user-home']">Active</a>
+        <a [routerLink]="['/user-home']">Solved</a>
+      </div>
+      <div class="issues">
+        <!-- Add clas name solved to all the solved issues -->
+        <div class="issue-box" *ngFor="let AddIssue of userIssue; "[(ngModel)]="this.count">
+          <h3>#{{AddIssue.complaintId}}</h3>
+          <div class="issue-content">
+            <h4>Issue</h4>
+            <p>{{AddIssue.complaintName}}</p>
           </div>
-          <div class="issue-box ">
-            <h4>#202103114</h4>
-            <div class="issue-content">
-              <h4>Issue</h4>
-              <p>Damage Product</p>
-            </div>
-            <div class="issue-content">
-              <h4>Created On</h4>
-              <p>18/03/2021</p>
-            </div>
-            <div class="issue-content">
-              <h4>Developer</h4>
-              <p>Mr. XYZ</p>
-            </div>
-            <div class="issue-content">
-              <h4>Status</h4>
-              <p>Active</p>
-            </div>
+          <div class="issue-content">
+            <h4>Created On</h4>
+            <p>{{AddIssue.createdOn}}</p>
           </div>
-          <div class="issue-box">
-            <h4>#202103114</h4>
-            <div class="issue-content">
-              <h4>Issue</h4>
-              <p>Damage Product</p>
-            </div>
-            <div class="issue-content">
-              <h4>Created On</h4>
-              <p>18/03/2021</p>
-            </div>
-            <div class="issue-content">
-              <h4>Developer</h4>
-              <p>Mr. XYZ</p>
-            </div>
-            <div class="issue-content">
-              <h4>Status</h4>
-              <p>Active</p>
-            </div>
+          <div class="issue-content">
+            <h4>Developer</h4>
+            <p>{{AddIssue.developer}}</p>
+          </div>
+          <div class="issue-content">
+            <h4>Status</h4>
+            <p>{{AddIssue.status}}</p>
           </div>
         </div>
-      </section>
-      <section class="right-content">
-        <h2>User</h2>
-        <div class="right-text">
-          <div class="right-text__content c-yellow">
-            <h4>Total Issue</h4>
-            <h4>5</h4>
-          </div>
-          <div class="right-text__content c-red">
-            <h4>Active Issue</h4>
-            <h4>5</h4>
-          </div>
-          <div class="right-text__content c-green">
-            <h4>Solved Issue</h4>
-            <h4>5</h4>
-          </div>
+       
+        
+      </div>
+    </section>
+    <section class="right-content" id="userDetails">
+      <h2>{{userDetail}}</h2>
+      <div class="right-text">
+        <div class="right-text__content c-yellow">
+          <h4>Total Issue</h4>
+          <h4 >1</h4>
         </div>
-      </section>
-    </div>
+        <div class="right-text__content c-red">
+          <h4>Active Issue</h4>
+          <h4>5</h4>
+        </div>
+        <div class="right-text__content c-green">
+          <h4>Solved Issue</h4>
+          <h4>5</h4>
+        </div>
+      </div>
+    </section>
   </div>
-  
-  
+</div>
+

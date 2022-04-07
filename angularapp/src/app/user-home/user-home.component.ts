@@ -18,17 +18,10 @@ export class UserHomeComponent implements OnInit {
   constructor(private service:RegisterIssueService,private userAuthService:UserAuthService, private router: Router) { }
   count!:Number;
   ngOnInit(): void {
-    // this.service.fetchIssueList().subscribe(
-    //   data=>{
-    //     this.issueList = data;
-    //     console.log("Response recieved")
-    //     console.log(data)
-    //   },
-    //   error=>console.log("Exception occured")
-    //  )
+  
    
     
-     //fetch issue of specific user
+     
     this.userDetail=this.userAuthService.getUser();
     this.service.getIssueList(this.userAuthService.getUser()).subscribe(//
     data=>{

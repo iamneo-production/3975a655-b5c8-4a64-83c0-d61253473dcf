@@ -39,7 +39,7 @@ public class UserService {
         roleRepo.save(managerRole);
 
         User adminUser = new User();
-        adminUser.setUsername("admin123@gmail.com");
+        adminUser.setUsername("admin@gmail.com");
         adminUser.setRole1("Admin");
         adminUser.setPassword(getEncodedPassword("admin"));
         adminUser.setName("admin");

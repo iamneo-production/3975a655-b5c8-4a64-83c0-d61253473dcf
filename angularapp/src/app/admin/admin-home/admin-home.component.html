@@ -1,0 +1,108 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<div class="app-container" id="adminHomeBody">
+  <nav class="nav-container">
+    <span class="left"><h1>Grievance Cell</h1></span>
+
+    <h4>
+      <a [routerLink]="['/login']"
+        ><span class="right" (click)="logout()">Logout</span></a
+      >
+
+      <a [routerLink]="['/admin']"><span class="right">Home</span></a>
+    </h4>
+  </nav>
+
+  <div class="content-container">
+    <section class="left-content">
+      <div class="link-container">
+        <a [routerLink]="['/manage-user']" class="active-btn" id="newButton"
+          >New</a
+        >
+        <a  [routerLink]="['/admin-home']" class="active-btn" id="activeButton">Active</a>
+        <a  [routerLink]="['/admin-home']" id="solvedButton">Solved</a>
+      </div>
+      <div class="issues">
+        <!-- Add clas name solved to all the solved issues -->
+        <div class="wrapper" *ngFor="let AddIssue of issueList; let i = index">
+          <div class="issue-box">
+            <h3>#{{ AddIssue.complaintId }}</h3>
+            <div class="issue-content">
+              <h4>Issue</h4>
+              <p>{{ AddIssue.complaintName }}</p>
+            </div>
+            <div class="issue-content">
+              <h4>Created On</h4>
+              <p>{{ AddIssue.createdOn }}</p>
+            </div>
+            <div class="issue-content">
+              <h4>Developer</h4>
+              <p>{{ AddIssue.developer }}</p>
+            </div>
+            <div class="issue-content" id="selectStatus">
+              <h4>Status</h4>
+              <p>{{ AddIssue.status }}</p>
+            </div>
+            <div class="issue-content" id="editStatus" (click)="handleEdit(i)">
+              <i class="fa-solid fa-pen-to-square fa-2x"></i>
+            </div>
+          </div>
+          <div class="edit-box hidden" id="edit-container">
+            <div class="input-container" id="">
+              <div class="select-wrapper">
+                <select
+                  name="status"
+                  id="selectDeveloper"
+                  class="select"
+                  (change)="handleChange($event)"
+                >
+                  <option value="N.A.">Not Assigned</option>
+                  <option
+                    value="{{ AddIssue.complaintName }}"
+                    *ngFor="let AddIssue of issueList"
+                  >
+                    {{ AddIssue.developer }}
+                  </option>
+                  <!-- <option value="solved">Solved</option> -->
+                </select>
+              </div>
+            </div>
+            <div class="btn-container">
+              <button id="updateButton" (click)="handleClick()">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="right-content" id="adminSideUserDetails">
+      <h2>ADMIN</h2>
+      <div class="right-text">
+        <div class="right-text__content c-green">
+          <h4>Users</h4>
+          <h4>1030</h4>
+        </div>
+        <div class="right-text__content c-green">
+          <h4>Developers</h4>
+          <h4>300</h4>
+        </div>
+        <div class="right-text__content c-green">
+          <h4>New Issue</h4>
+          <h4>1</h4>
+        </div>
+        <div class="right-text__content c-green">
+          <h4>Solved Issue</h4>
+          <h4>10150</h4>
+        </div>
+        <div class="right-text__content c-red">
+          <h4>Active Issue</h4>
+          <h4>300</h4>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

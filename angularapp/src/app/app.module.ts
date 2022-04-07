@@ -14,6 +14,7 @@ import { UserService } from './services/user.service';
 import { AuthInterceptor } from './authentication/auth.interceptor';
 import { AuthGuard } from './authentication/auth.guard';
 import { IssueComponent } from './issue/issue.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 
 
@@ -25,6 +26,7 @@ import { IssueComponent } from './issue/issue.component';
     LoginComponent,
     AdminComponent,
     IssueComponent,
+    AdminHomeComponent,
   
   ],
   imports: [

@@ -1,0 +1,133 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<div class="app-container" id="updaeDeveloperManage">
+  <nav class="nav-container">
+    <span class="left"><h1>Grievance Cell</h1></span>
+
+    <h4>
+      <a [routerLink]="['/login']"><span class="right"(click)="logout()">Logout</span></a>
+
+      <a [routerLink]="['/admin']"><span class="right">Home</span></a>
+    </h4>
+  </nav>
+
+  <div class="content-container">
+    <section class="left-content">
+      <div class="link-container">
+        <div class="issue-content">
+          <h4>id</h4>
+        </div>
+        <div class="issue-content">
+          <h4>Name</h4>
+        </div>
+        <div class="issue-content">
+          <h4>Role</h4>
+        </div>
+        
+        <div class="issue-content">
+          <h4>Options</h4>
+        </div>
+
+        <div
+          class="issue-content"
+          id="addButton"
+          style="display: flex; align-items: center; cursor: pointer"
+          (click)="handleAdd()"
+        >
+          <i class="fa-solid fa-circle-plus"></i>
+          <h4>Add</h4>
+        </div>
+      </div>
+      <div class="issues"*ngFor="let User of developer">
+        
+        <!-- Add clas name solved to all the solved issues -->
+        <div class="issue-box">
+          <div class="issue-content">
+            <h4>100</h4>
+          </div>
+          <div class="issue-content">
+            <h4>{{User.firstname}}</h4>
+          </div>
+          <div class="issue-content">
+            <h4>{{User.role1}}</h4>
+          </div>
+       
+
+          <div class="issue-content" id="editStatus">
+            <!-- (click)="handleEdit()" -->
+            <i
+              class="fa-solid fa-pen-to-square fa-2x"
+              (click)="handleEdit()"
+            ></i>
+            <i class="fa-solid fa-trash-can trash fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="right-content hidden" id="right-content">
+      <form #Registrationform="ngForm" (ngSubmit)="registerUser()">
+        <div class="right-wrapper">
+          <h3>ADD/Update</h3>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            id="enterName"
+            placeholder="Enter name"
+            [(ngModel)]="user.firstname"
+            #firstname="ngModel"
+          />
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            id="enterEmail"
+            placeholder="Enter email"
+            [(ngModel)]="user.username"
+            required
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched"
+          />
+          <div *ngIf="email.errors && email.invalid && email.touched">
+            <small class="text-danger" *ngIf="email.errors['required']"
+              >Email Id is required</small
+            >
+            <small class="text-danger" *ngIf="email.errors['pattern']">
+              Enter a valid emailID</small
+            >
+          </div>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            id="enterUsername"
+            placeholder="Enter username"
+            [(ngModel)]="user.name"
+            #username="ngModel"
+            required
+            [class.is-invalid]="username.invalid && username.touched"
+          />
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            id="enterPassword"
+            placeholder="Enter password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            required
+            [class.is-invalid]="password.invalid && password.touched"
+          />
+          
+          <button id="updateButton" class="btn" >ADD/Update</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>

@@ -1,65 +1,64 @@
 /* Navbar */
 
 .nav-container {
-    background-color: #ffb74b;
-    height: 100px;
-    width: 100%;
-    color: #fff;
-    padding: 20px 0px;
-    padding-left: 50px;
-  }
-  
-  .nav-container h1 {
-    width: max-content;
-    text-shadow: 1px 1px 2px black;
-  }
-  
-  #signupBox {
-    background-color: #e7e3e3;
-    width: 100%;
-    height: calc(100vh - 100px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .signuptxt {
-    color: #007aa5;
-    font-weight: 500;
-    font-size: 40px;
-  }
-  
-  .signupContent {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* background-color: aqua; */
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-  }
-  
-  #submitButton {
-    width: 120px;
-    align-self: center;
-    margin-top: 5px;
-    color: #fff;
-  }
-  
-  .member {
-    align-self: flex-end;
-  }
-  #signinLink {
-    color: #007aa5;
-    cursor: pointer;
-  }
-  
+  background-color: #ffb74b;
+  height: 100px;
+  width: 100%;
+  color: #fff;
+  padding: 20px 0px;
+  padding-left: 50px;
+}
+
+.nav-container h1 {
+  width: max-content;
+  text-shadow: 1px 1px 2px black;
+}
+
+#signupBox {
+  background-color: #e7e3e3;
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.signuptxt {
+  color: #007aa5;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.signupContent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+#submitButton {
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+  color: #fff;
+}
+
+.member {
+  align-self: flex-end;
+}
+#signinLink {
+  color: #007aa5;
+  cursor: pointer;
+}

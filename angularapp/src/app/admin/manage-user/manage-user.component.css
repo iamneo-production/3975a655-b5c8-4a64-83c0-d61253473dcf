@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .app-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .nav-container {
+    background-color: #ffb74b;
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    padding: 20px 0px;
+    padding-left: 50px;
+  }
+  
+  .nav-container h1 {
+    width: max-content;
+    text-shadow: 1px 1px 2px black;
+  }
+  
+  .right {
+    float: right;
+    padding: 15px 0px;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+  }
+  
+  .left {
+    float: left;
+  }
+  .column {
+    margin-top: 20px;
+    float: right;
+    width: 22%;
+    margin-left: 100px;
+    padding: 10px;
+    border-radius: 10;
+    height: 550px; /* Should be removed. Only for demonstration */
+  }
+  
+  .content-container {
+    height: calc(100vh - 100px);
+    width: 100vw;
+    background-color:#dcdcdc;
+    display: flex;
+    align-items: center;
+    /* justify-items: center; */
+  }
+  
+  .left-content {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .issue-box {
+    display: flex;
+    background-color: #677a80;
+    padding: 15px;
+    margin: 40px 110px 0px 20px;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    border-radius: 10px;
+    height: 120px;
+    color: #fff;
+    width: 88%;    
+    column-gap: 160px;
+  }
+
+  .details{
+    border-right: 1px solid #000;
+    padding-right: 20px;
+  }
+  
+  .issue-content {
+    text-align: center;
+    margin-left: 10px;
+    padding-left: 10px;
+    
+    
+  }
+
+  i{
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  .right-content {
+    background-color: #fff;
+    height: 80%;
+    padding: 85px 0px;
+    width: 25%;
+    border-radius: 12px;
+    margin-left: -15px;
+    margin-right: 35px;
+    margin-top: -10px;
+  
+    text-align: center;
+  }
+  
+  .right-content h2 {
+    margin-bottom: 50px;
+  }
+
+  .right-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  input{
+    margin-top: 25px;
+    padding: 5px;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    height: 45px;
+    width: 80%;
+  }
+
+  ::placeholder{
+    color: #000;
+  }
+  
+  .link-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    /* height: 120px; */
+    color: #fff;
+    width: 98%;
+    
+  }
+  
+  .link-container h4{
+    margin-left: 25px;
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+  }
+  
+  .link-container .issue-content{
+    text-align: center;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000 ;
+    white-space: nowrap;
+    margin: 0;
+    padding: 10px 50px;
+    width: 450px;
+  }
+
+  .solved{
+    display: none;
+  }
+
+  /* .link-container {
+    margin-left: 80px;
+  } */
+  
+  .right-text{
+      
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .right-text__content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 60%;
+    margin-bottom: 35px;
+  }
+  
+
+  
+  .c-red{
+    color: red;
+  }
+  
+  .c-green{
+    color: green;
+  }
+
+  .input-container{
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+  }
+  
+  .edit-box{
+    /* justify-self: flex-end; */
+    display: flex;
+    background-color: #fff;
+    width: 40%;
+    padding: 20px 10px 10px 10px;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .btn-container{
+    width: 60%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  #updateButton, .btn{
+    background-color: #44b0ff;
+    padding: 10px 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: max-content;
+    align-self: center;
+    margin-top: 25px;
+  }
+
+  
+  .issues{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  /* .link-container .issue-content:first-of-type{
+    width: 250px;
+  }
+  
+  .link-container .issue-content:nth-of-type(4){
+    width: 300px;
+
+  }
+  .link-container .issue-content:nth-of-type(5){
+    width: 250px;
+
+  } */

@@ -12,6 +12,7 @@ import { UserService } from '../services/user.service';
 export class LoginComponent implements OnInit {
   user = new User();
   msg = '';
+  name='';
   constructor( private userService: UserService,
     private router: Router,
     private userAuthService:UserAuthService) { }
@@ -22,17 +23,21 @@ export class LoginComponent implements OnInit {
  
     this.userService.loginUserFromRemote(this.user).subscribe(
       (response) => {
-        //console.log(response.jwtToken);
-        //console.log(response.user.role);
+           console.log(this.user)
         this.userAuthService.setRoles(response.user.role);
         this.userAuthService.setToken(response.jwtToken);
-       const role= response.user.role[0].roleName;
-       //console.log(role);
+        this.userAuthService.setUser(response.user.username);
+      const role= response.user.role[0].roleName;
+       const name=response.user.username;
+      // console.log(name);
        if(role==='User'){
          this.router.navigate(['/user-home']);
        }
-       else{
+       else if(role==='Admin') {
         this.router.navigate(['/admin']);
+       }
+       else{
+        this.router.navigate(['/developer-page']);
        }
       },
       (error) => {
@@ -42,19 +47,14 @@ export class LoginComponent implements OnInit {
     );
   }
   public isLoggedIn(){
-    //let a!:boolean;
+    
     this.user.active=true;
     this.userAuthService.isLoggedIn();
-    //  if(a===true){
-    //   this.user.active=true;
+  
      console.log(this.userAuthService.isLoggedIn());
-  // }
-  // public logout(){
-  //   this.UserAuthService.active=false;
-  //this.router.navigate(['/login'])
-  //  return this.UserAuthService.clear();
+  
       
-  // }
+ 
     }
 
 }

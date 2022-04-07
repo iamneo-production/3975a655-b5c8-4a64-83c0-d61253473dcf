@@ -1,87 +1,84 @@
 <nav class="nav-container">
-    <h1>Grievance Cell</h1>
-  </nav>
-  <div id="loginBox">
-    <!-- <div class="row">
-      <div class="col-6"> -->
-    <div class="loginContent">
-      <h2 class="logintxt">Login</h2>
-  
-      <form #loginform="ngForm" (ngSubmit)="loginUser()">
-        <!--{{loginform.form.valid}}-->
-        <small class="text-danger emps a">{{msg}}</small>
-        <div class="form-group">
-          <!-- <label for="email" style="margin-left:200px; color:orange">Email:</label> -->
-          <input
-            type="email"
-            id="email"
-            class="form-control emps"
-            id="email"
-            placeholder="Enter Email"
-            name="email"
-            [(ngModel)]="user.username"
-            required
-            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-            #email="ngModel"
-            [class.is-invalid]="email.invalid && email.touched"
-          />
-  
-          <div *ngIf="email.errors && (email.invalid && email.touched)">
-            <small class="text-danger emps" *ngIf="email.errors['required']"
-              >Email Id is required</small
-            >
-            <small class="text-danger emps" *ngIf="email.errors['pattern']">
-              Enter a valid emailID</small
-            >
-          </div>
-        </div>
-        <div class="form-group">
-          <!-- <label for="pwd">Password:</label> -->
-          <br />
-          <input
-            type="password"
-            class="form-control emps"
-            id="password"
-            placeholder="Enter Password"
-            name="password"
-            [(ngModel)]="user.password"
-            #password="ngModel"
-            required
-            [class.is-invalid]="password.invalid && password.touched"
-          />
-          <div
-            *ngIf="password.errors && (password.invalid && password.touched)"
+  <h1>Grievance Cell</h1>
+</nav>
+<div id="loginBox">
+  <!-- <div class="row">
+    <div class="col-6"> -->
+  <div class="loginContent">
+    <h2 class="logintxt">Login</h2>
+
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <!--{{loginform.form.valid}}-->
+      <small class="text-danger emps a">{{msg}}</small>
+      <div class="form-group">
+        <!-- <label for="email" style="margin-left:200px; color:orange">Email:</label> -->
+        <input
+          type="email"
+          id="email"
+          class="form-control emps"
+          id="email"
+          placeholder="Enter Email"
+          name="email"
+          [(ngModel)]="user.username"
+          required
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          #email="ngModel"
+          [class.is-invalid]="email.invalid && email.touched"
+        />
+
+        <div *ngIf="email.errors && (email.invalid && email.touched)">
+          <small class="text-danger emps" *ngIf="email.errors['required']"
+            >Email Id is required</small
           >
-            <small
-              class="text-danger emps"
-              *ngIf="password.errors['required']"
-              >Password is required</small
-            >
-            <small
-              class="text-danger emps"
-              *ngIf="password.errors['pattern']"
-            ></small>
-          </div>
+          <small class="text-danger emps" *ngIf="email.errors['pattern']">
+            Enter a valid emailID</small
+          >
         </div>
+      </div>
+      <div class="form-group">
+        <!-- <label for="pwd">Password:</label> -->
         <br />
-  
-        <small class="Newuser" [routerLink]="['/signup']"
-          >New User?<span id="signupLink"> Sign Up</span></small
+        <input
+          type="password"
+          class="form-control emps"
+          id="password"
+          placeholder="Enter Password"
+          name="password"
+          [(ngModel)]="user.password"
+          #password="ngModel"
+          required
+          [class.is-invalid]="password.invalid && password.touched"
+        />
+        <div
+          *ngIf="password.errors && (password.invalid && password.touched)"
         >
-        <button
-          [disabled]="loginform.form['invalid']"
-          id="SubmitButton"
-          type="submit"
-          class="btn btn-info submit"
-        >
-          LOGIN<span></span>
-        </button>
-      </form>
-  
-      <!--<small class="float-right"
-    Click()="gotoregistration()">New User ? Register here</small>-->
-    </div>
-    <!-- </div>
-    </div> -->
+          <small
+            class="text-danger emps"
+            *ngIf="password.errors['required']"
+            >Password is required</small
+          >
+          <small
+            class="text-danger emps"
+            *ngIf="password.errors['pattern']"
+          ></small>
+        </div>
+      </div>
+      <br />
+
+      <small class="Newuser" [routerLink]="['/signup']"
+        >New User?<span id="signupLink"> Sign Up</span></small
+      >
+      <button
+        [disabled]="loginform.form['invalid']"
+        id="SubmitButton"
+        type="submit"
+        class="btn btn-info submit"
+      >
+        LOGIN<span></span>
+      </button>
+    </form>
+
   </div>
-    
+  
+</div>
+  

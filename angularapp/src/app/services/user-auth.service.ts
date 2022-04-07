@@ -1,3 +1,4 @@
+import { getInstructionStatements } from '@angular/compiler/src/render3/view/util';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -20,11 +21,21 @@ export class UserAuthService {
   public setToken(jwtToken: string) {
     localStorage.setItem('jwtToken', jwtToken);
   }
+   //fetch issue of specific user
+  public setUser(user:String){
+    localStorage.setItem("user",JSON.stringify(user));
+  }
+  public getUser(){
+    return JSON.parse(localStorage.getItem('user')||"");
+  }
+  
   public clear(){
     localStorage.clear();
   }
   public isLoggedIn(){
-    return this.getRoles() && this.getToken;
+    return this.getRoles() && this.getToken() && this.getUser;
 
   }
+
+  
 }

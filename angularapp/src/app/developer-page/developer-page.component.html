@@ -1,0 +1,92 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<div class="app-container">
+  <nav class="nav-container">
+    <span class="left"><h1>Grievance Cell</h1></span>
+
+    <h4>
+      <a [routerLink]="['/login']"><span class="right" (click)="logout()">Logout</span></a>
+      <a [routerLink]="['/Issue']"><span class="right">Add+</span></a>
+      <a [routerLink]="['user-home']"><span class="right">Home</span></a>
+    </h4>
+  </nav>
+
+  <div class="content-container">
+    <section class="left-content">
+      <div class="link-container">
+        <a href="#" class="active-btn" id="activeButton">Active</a>
+        <a href="#" id="solvedButton">Solved</a>
+      </div>
+      <div class="issues">
+        <!-- Add clas name solved to all the solved issues -->
+        <div class="issue-box-wrapper" *ngFor="let AddIssue of issueList">
+          <div class="issue-box">
+            <h3>#{{ AddIssue.complaintId }}</h3>
+            <div class="issue-content">
+              <h4>Issue</h4>
+              <p>{{ AddIssue.complaintName }}</p>
+            </div>
+            <div class="issue-content">
+              <h4>Created On</h4>
+              <p>{{ AddIssue.createdOn }}</p>
+            </div>
+            <div class="issue-content">
+              <h4>Developer</h4>
+              <p>{{ AddIssue.developer }}</p>
+            </div>
+            <div class="issue-content">
+              <h4>Status</h4>
+              <p>{{ AddIssue.status }}</p>
+            </div>
+            <div class="issue-content" id="editStatus" (click)="handleEdit()">
+              <i class="fa-solid fa-pen-to-square fa-2x" id="editStatus"></i>
+            </div>
+          </div>
+          <div class="edit-box hidden" id="edit-container">
+            <div class="input-container">
+              <div class="select-wrapper">
+                <select name="status" id="selectStatus" class="select">
+                  <option value="">Set Status</option>
+                  <option value="active">Active</option>
+                  <option value="solved">Solved</option>
+                </select>
+              </div>
+              <textarea
+                name="desc"
+                id="issueDescription"
+                cols="30"
+                rows="5"
+                placeholder="Provide Description"
+              ></textarea>
+            </div>
+            <div class="btn-container">
+              <button id="updateButton">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="right-content" id="issueDetails">
+      <h2>user</h2>
+      <div class="right-text">
+        <div class="right-text__content c-yellow">
+          <h4>Total Issue</h4>
+          <h4>"count"</h4>
+        </div>
+        <div class="right-text__content c-red">
+          <h4>Active Issue</h4>
+          <h4>5</h4>
+        </div>
+        <div class="right-text__content c-green">
+          <h4>Solved Issue</h4>
+          <h4>5</h4>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

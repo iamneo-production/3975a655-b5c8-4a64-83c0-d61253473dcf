@@ -1,6 +1,6 @@
 
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Router } from '@angular/router';
 import { AddIssue } from '../model/add-issue';
@@ -15,9 +15,11 @@ export class IssueComponent implements OnInit {
   imageToShow: string = '';
   Issue=new AddIssue();
   msg:any='';
-  constructor(private _service: RegisterIssueService, private _router: Router) {}
+  constructor(private service: RegisterIssueService, private _router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   
+  }
 
   showImage() {
     let imageToShow = (<HTMLInputElement>document.getElementById('imageUrl')).value;
@@ -35,10 +37,10 @@ export class IssueComponent implements OnInit {
     }
   }
   submitIssue(){
-    this._service.RegisterIssueFromRemote(this.Issue).subscribe(
+    this.service.RegisterIssueFromRemote(this.Issue).subscribe(
       (data) => {
-        console.log(data);
-        this._router.navigate(['/loginsuccess']);
+        //console.log(data);
+        this._router.navigate(['/user-home']);
       },
       (error) => {
         console.log('exception occured');

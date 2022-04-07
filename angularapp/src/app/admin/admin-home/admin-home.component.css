@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-container {
+    width: 100vw;
+    height: 100%;
+    
+  }
+  
+  .nav-container {
+    background-color: #ffb74b;
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    padding: 20px 0px;
+    padding-left: 50px;
+  }
+  
+  .nav-container h1 {
+    width: max-content;
+    text-shadow: 1px 1px 2px black;
+  }
+  
+  .right {
+    float: right;
+    padding: 15px 0px;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+  }
+  
+  .left {
+    float: left;
+  }
+  .column {
+    margin-top: 20px;
+    float: right;
+    width: 22%;
+    margin-left: 100px;
+    padding: 10px;
+    border-radius: 10;
+    height: 550px; /* Should be removed. Only for demonstration */
+  }
+  
+  .content-container {
+    height: calc(100% - 100px);
+    width: 100vw;
+    /* background-color: ; */
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    /* justify-items: center; */
+  }
+  
+  .left-content {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .issue-box {
+    display: flex;
+    background-color: #68797f;
+    padding: 15px;
+    margin: 40px 5px 0px 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    height: 120px;
+    color: #fff;
+    width: 98%;
+    
+  }
+
+  .active-btn{
+    border-right: 1px solid #000;
+    padding-right: 20px;
+  }
+  
+  .issue-content {
+    text-align: center;
+    margin-left: 10px;
+    
+  }
+  
+  .right-content {
+    background-color: #dcdcdc;
+    height: 80%;
+    padding: 85px 0px;
+    width: 25%;
+    border-radius: 12px;
+    margin-left: 80px;
+    margin-right: 5px;
+    margin-top: -40px;
+  
+    text-align: center;
+  }
+  
+  .right-content h2 {
+    margin-bottom: 50px;
+  }
+  
+  
+  .link-container a {
+    margin-left: 25px;
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+  }
+  
+  .solved{
+    display: none;
+  }
+
+  .link-container {
+    margin-left: 80px;
+  }
+  
+  .right-text{
+      
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .right-text__content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 60%;
+    margin-bottom: 35px;
+  }
+  
+
+  
+  .c-red{
+    color: red;
+  }
+  
+  .c-green{
+    color: green;
+  }
+
+  .input-container{
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+  }
+  
+  .edit-box{
+    /* justify-content: flex-end; */
+    display: flex;
+    background-color: #fff;
+    width: 40%;
+    padding: 20px 10px 10px 10px;
+    position: relative;
+    border-radius: 8px;
+    transform: translateX(660px);
+  }
+
+  .btn-container{
+    width: 60%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  #updateButton{
+    background-color: #44b0ff;
+    padding: 10px 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+
+  #editStatus{
+    cursor: pointer;
+  }
+
+  #issueDescription{
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #dbf0ff;
+    padding: 20px 10px;
+  }
+
+  .select-wrapper{
+    position: relative;
+    width: 100%;
+  }
+  #selectDeveloper{
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #dbf0ff;
+    padding: 10px 10px;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .select-wrapper::after{
+    content: url(../../../assets/circle-chevron-down-solid.svg);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    right: 10px;
+    bottom: 5px;
+    cursor: pointer;
+  }
+
+  .issues{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  .wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }

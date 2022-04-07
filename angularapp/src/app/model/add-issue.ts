@@ -5,7 +5,10 @@ export class AddIssue {
     complaintName!:String;
     description!:String;
     imageUrl!:String;
-   
+    createdOn!:Date
+    status!:String;
+    developer!:String;
+    username1!:String;
     constructor(
         ){
             

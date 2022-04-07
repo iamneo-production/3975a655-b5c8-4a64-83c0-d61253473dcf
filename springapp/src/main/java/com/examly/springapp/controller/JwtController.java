@@ -17,6 +17,7 @@ public class JwtController {
     private JwtService jwtService;
 
     @PostMapping({"/login"})
+    @CrossOrigin(origins = "https://8081-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/")
     public JwtResponse createJwtToken(@RequestBody JwtRequest jwtRequest) throws Exception {
         return jwtService.createJwtToken(jwtRequest);
     }

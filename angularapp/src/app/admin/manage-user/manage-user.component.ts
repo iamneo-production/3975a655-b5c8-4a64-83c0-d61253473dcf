@@ -66,7 +66,8 @@ export class ManageUserComponent implements OnInit {
         this.msg = '*Email already exists';
       }
     );
- 
+    // let user = (<HTMLInputElement>document.getElementById("enterUsername")).value ;
+    //console.log(this.user.username);
   }
   public isLoggedIn() {
     this.user.active = true;

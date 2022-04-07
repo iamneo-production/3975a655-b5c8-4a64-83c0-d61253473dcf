@@ -1,136 +1,41 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"); */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
-.app-container {
-  width: 100vw;
-  height: 100vh;
-}
+<link rel="stylesheet" href="issue.component.css">
 
-.nav-container {
-  background-color: #ffb74b;
-  height: 100px;
-  width: 100%;
-  color: #fff;
-  padding: 20px 0px;
-  padding-left: 50px;
-}
+<div class="app-container" id="addHomeBody">
+  <nav class="nav-container">
+    <span class="left"><h1>Grievance Cell</h1></span>
 
-.nav-container h1 {
-  width: max-content;
-  text-shadow: 1px 1px 2px black;
-}
-.right {
-  float: right;
-  padding: 15px 0px;
-  margin-left: 25px;
-  margin-right: 25px;
-  color: #fff;
-}
+    <h4>
+      <a [routerLink]="['/login']"><span class="right">Logout</span></a>
+      <a [routerLink]="['/user-home']"><span class="right">Home</span></a>
+    </h4>
+  </nav>
+    
+    <div class="form-wrapper" >
 
-.left {
-  float: left;
-}
-.column {
-  margin-top: 20px;
-  float: right;
-  width: 22%;
-  margin-left: 100px;
-  padding: 10px;
-  border-radius: 10;
-  height: 550px; /* Should be removed. Only for demonstration */
-}
+      <form #Issueform="ngForm"class="app" (ngSubmit)="submitIssue()">
+        <h1>Add Issue</h1>
+        <div class="form__row">
+          <label for="issue">Name of Issue</label>
+          <input type="text"  name="issue" id="name" [(ngModel)]="Issue.complaintName" required />
+        </div>
+        <div class="form__row">
+          <label for="">Description</label>
+        
+          <input type="text" name="desc" id="description" [(ngModel)]="Issue.description" required />
+        </div>
+        <div class="form__row">
+          <label for="myURL">Image Url</label>
+          <input type="text"  class="url"  name="url" id="imageUrl"   (change)="showImage()" #imageUrl    [(ngModel)]="Issue.imageUrl"required />
+            </div>
+        <div class="preview_container">
+          <h3 id="text">Image Preview</h3>
+          <img [src]="imageToShow" alt="img" class="preview" id="imagePreviewArea" draggable="false"  />
+        </div>
+        <!-- <input type="submit" value="Submit" />  -->
+        <button [disabled]="Issueform.form['invalid']"  type="submit" id="submitButton" class="btn btn-info">Submit</button> 
+      </form>
+    </div>
+    </div>
+    
 
-
-.form-wrapper {
-  width: 100%;
-  height: 150vh;
-  display: flex;
-  justify-content: center;
-  font-family: "Roboto", sans-serif;
-}
-
-.app {
-  margin-top: 100px;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-input[type="text"] {
-  width:60%;
-  border: none;
-  outline: none;
-  height: 30px;
-  background-color: #dcf0ff;
-  border-radius: 5px;
-  padding: 4px;
-}
-
-label {
-  justify-self: center;
-}
-
-.form__row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  width: 70%;
-  /* flex-direction: row; */
-}
-
-.form__row:nth-of-type(1) {
-  margin-top: 20px;
-}
-
-.preview_container {
-  width: 70%;
-  height: 250px;
-  background-color: grey;
-  /* border: 2px solid; */
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
-.preview{
-  display: none;
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-button {
-  margin-top: 10px;
-  background-color: #0bb0f6;
-  border: none;
-  outline: none;
-  width: 100px;
-  text-align: center;
-  border-radius: 8px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: 700;
-  color:#fff
-}
-img {
-  height: 300px;
-  width: 70%;
-  object-fit: fill;
-}
-
-.preview_container h3 {
-  color: #fff;
-  text-align: center;
-  margin-top: 28%;
-  font-weight: 400;
-}

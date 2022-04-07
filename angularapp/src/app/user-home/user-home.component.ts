@@ -19,9 +19,6 @@ export class UserHomeComponent implements OnInit {
   count!:Number;
   ngOnInit(): void {
   
-   
-    
-     
     this.userDetail=this.userAuthService.getUser();
     this.service.getIssueList(this.userAuthService.getUser()).subscribe(//
     data=>{

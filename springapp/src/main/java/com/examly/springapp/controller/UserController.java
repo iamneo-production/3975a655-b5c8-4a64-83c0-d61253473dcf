@@ -21,6 +21,7 @@ public class UserController {
     }
 
     @PostMapping({"/signup"})
+    @CrossOrigin(origins = "https://8081-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/")
     public User saveUser(@RequestBody User user)throws Exception {
         String tempUsername=user.getUsername();
         if(tempUsername !=null && !" ".equals(tempUsername)){
@@ -51,7 +52,7 @@ public class UserController {
       }
 
       @PostMapping({"/manage-user"})
-      @CrossOrigin(origins = "http://localhost:4200/")
+      @CrossOrigin(origins = "https://8081-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/")
       public User saveDeveloper(@RequestBody User user) throws Exception {
           String tempUsername = user.getUsername();
           if (tempUsername != null && !" ".equals(tempUsername)) {
@@ -66,7 +67,7 @@ public class UserController {
       }
 
     @GetMapping("/User/{role1}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://8081-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/")
     public List<User> fetchUserByRole1(@PathVariable String role1) {
         return userService.fetchUserByRole1(role1);
     }

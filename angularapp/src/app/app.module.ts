@@ -1,33 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserHomeComponent } from './user-home/user-home.component';
-import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
+
 import { AdminComponent } from './admin/admin.component';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { UserHomeComponent } from './user-home/user-home.component';
+
+
+import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { UserService } from './services/user.service';
-import { AuthInterceptor } from './authentication/auth.interceptor';
-import { AuthGuard } from './authentication/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { LoginComponent } from './login/login.component';
 import { IssueComponent } from './issue/issue.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-
-
+import { DeveloperPageComponent } from './developer-page/developer-page.component';
+import { ManageUserComponent } from './admin/manage-user/manage-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserHomeComponent,
-    SignupComponent,
-    LoginComponent,
     AdminComponent,
+    UserHomeComponent,
+    LoginComponent,
     IssueComponent,
+    SignupComponent,
     AdminHomeComponent,
-  
+    DeveloperPageComponent,
+    ManageUserComponent
   ],
   imports: [
     BrowserModule,

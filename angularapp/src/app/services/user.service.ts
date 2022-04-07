@@ -15,16 +15,16 @@ export class UserService {
   constructor(private http: HttpClient,
   private userAuthService: UserAuthService) { }
   public registerDeveloperUserFromRemote(user:User):Observable<any>{
-    return  this.http.post<any>("http://localhost:8080/manage-user",user,{headers:this.requestHeader});//Doubt
+    return  this.http.post<any>("https://8080-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/manage-user",user,{headers:this.requestHeader});//Doubt
     }
     public registerUserFromRemote(user:User):Observable<any>{
-      return  this.http.post<any>("http://localhost:8080/signup",user,{headers:this.requestHeader});//Doubt
+      return  this.http.post<any>("https://8080-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/signup",user,{headers:this.requestHeader});//Doubt
       }
     public loginUserFromRemote(user:User):Observable<any>{
-      return  this.http.post<any>("http://localhost:8080/login",user,{headers:this.requestHeader})
+      return  this.http.post<any>("https://8080-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/login",user,{headers:this.requestHeader})
       }
       public fetchByRole(Role:String):Observable<any>{
-        return this.http.get<any>("http://localhost:8080/User/"+Role)
+        return this.http.get<any>("https://8080-ffddddabeeffaddccadaddadcafda.examlyiopb.examly.io/User/"+Role)
       }
       
       
